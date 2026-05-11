@@ -455,6 +455,15 @@ body.nav-open { overflow: hidden; }
 }
 .concept-card:hover { background-color: #2F2317; }
 
+.concept-card--fresh {
+  background-image:
+    linear-gradient(rgba(15,8,3,0.62), rgba(15,8,3,0.62)),
+    url(img/sengyo_haikei.jpg);
+  background-size: cover;
+  background-position: center;
+}
+.concept-card--fresh:hover { background-color: transparent; }
+
 .concept-icon {
   color: var(--accent-gold);
   margin-bottom: 28px;
