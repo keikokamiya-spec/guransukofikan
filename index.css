@@ -5,11 +5,16 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Noto+Sans+JP:wght@300;400;500&family=Noto+Serif+JP:wght@300;400;600&display=swap');
 
+/* ---- Wood Grain Texture (CSS-only) ---- */
+:root {
+  --wood-grain: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='wood'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.015 0.6' numOctaves='4' seed='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3CfeBlend in='SourceGraphic' mode='multiply'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23wood)' opacity='0.18'/%3E%3C/svg%3E");
+}
+
 /* ---- Custom Properties ---- */
 :root {
-  --bg-primary:    #1A1410;
-  --bg-secondary:  #221A12;
-  --bg-card:       #2A1F14;
+  --bg-primary:    #1C1108;
+  --bg-secondary:  #231508;
+  --bg-card:       #2B1C0E;
   --accent-gold:   #C9A84C;
   --accent-gold-lt:#E0C878;
   --text-main:     #F0EBE1;
@@ -38,6 +43,39 @@ html { scroll-behavior: smooth; }
 body {
   font-family: var(--font-sans-jp);
   background-color: var(--bg-primary);
+  background-image:
+    /* 細かい木目ライン */
+    repeating-linear-gradient(
+      91.5deg,
+      transparent 0px,
+      transparent 3px,
+      rgba(255, 200, 100, 0.018) 3px,
+      rgba(255, 200, 100, 0.018) 4px,
+      transparent 4px,
+      transparent 11px,
+      rgba(0, 0, 0, 0.07) 11px,
+      rgba(0, 0, 0, 0.07) 13px
+    ),
+    /* 大きな木目ライン */
+    repeating-linear-gradient(
+      89deg,
+      transparent 0px,
+      transparent 28px,
+      rgba(255, 180, 60, 0.022) 28px,
+      rgba(255, 180, 60, 0.022) 30px,
+      transparent 30px,
+      transparent 55px,
+      rgba(0, 0, 0, 0.055) 55px,
+      rgba(0, 0, 0, 0.055) 58px
+    ),
+    /* ランダム感を出す第3レイヤー */
+    repeating-linear-gradient(
+      90.8deg,
+      transparent 0px,
+      transparent 70px,
+      rgba(180, 120, 30, 0.015) 70px,
+      rgba(180, 120, 30, 0.015) 72px
+    );
   color: var(--text-main);
   line-height: 1.9;
   overflow-x: hidden;
@@ -397,10 +435,25 @@ body.nav-open { overflow: hidden; }
   padding: 56px 40px;
   text-align: center;
   border: 1px solid var(--border);
-  background: var(--bg-card);
-  transition: background 0.3s;
+  background-color: var(--bg-card);
+  background-image:
+    repeating-linear-gradient(
+      91.5deg,
+      transparent 0px, transparent 3px,
+      rgba(255,200,100,0.016) 3px, rgba(255,200,100,0.016) 4px,
+      transparent 4px, transparent 11px,
+      rgba(0,0,0,0.065) 11px, rgba(0,0,0,0.065) 13px
+    ),
+    repeating-linear-gradient(
+      89deg,
+      transparent 0px, transparent 28px,
+      rgba(255,180,60,0.02) 28px, rgba(255,180,60,0.02) 30px,
+      transparent 30px, transparent 55px,
+      rgba(0,0,0,0.05) 55px, rgba(0,0,0,0.05) 58px
+    );
+  transition: background-color 0.3s;
 }
-.concept-card:hover { background: #2F2317; }
+.concept-card:hover { background-color: #2F2317; }
 
 .concept-icon {
   color: var(--accent-gold);
@@ -499,7 +552,22 @@ body.nav-open { overflow: hidden; }
 }
 
 .menu-card {
-  background: var(--bg-card);
+  background-color: var(--bg-card);
+  background-image:
+    repeating-linear-gradient(
+      91.5deg,
+      transparent 0px, transparent 3px,
+      rgba(255,200,100,0.016) 3px, rgba(255,200,100,0.016) 4px,
+      transparent 4px, transparent 11px,
+      rgba(0,0,0,0.065) 11px, rgba(0,0,0,0.065) 13px
+    ),
+    repeating-linear-gradient(
+      89deg,
+      transparent 0px, transparent 28px,
+      rgba(255,180,60,0.02) 28px, rgba(255,180,60,0.02) 30px,
+      transparent 30px, transparent 55px,
+      rgba(0,0,0,0.05) 55px, rgba(0,0,0,0.05) 58px
+    );
   border: 1px solid var(--border);
   border-radius: var(--radius);
   overflow: hidden;
