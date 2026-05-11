@@ -473,6 +473,15 @@ body.nav-open { overflow: hidden; }
 }
 .concept-card--sake:hover { background-color: transparent; }
 
+.concept-card--space {
+  background-image:
+    linear-gradient(rgba(15,8,3,0.62), rgba(15,8,3,0.62)),
+    url(img/space_haikei.jpg);
+  background-size: cover;
+  background-position: center;
+}
+.concept-card--space:hover { background-color: transparent; }
+
 .concept-icon {
   color: var(--accent-gold);
   margin-bottom: 28px;
