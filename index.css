@@ -608,6 +608,11 @@ body.nav-open { overflow: hidden; }
   display: none;
 }
 
+@media (min-width: 768px) {
+  .menu-card-hidden { display: block; }
+  .menu-more-wrap { display: none; }
+}
+
 .menu-card-img {
   aspect-ratio: 4 / 3;
   overflow: hidden;
@@ -989,8 +994,24 @@ body.nav-open { overflow: hidden; }
   /* Concept */
   .concept-card { padding: 40px 24px; }
 
-  /* Menu */
-  .menu-grid { grid-template-columns: 1fr; }
+  /* Menu — horizontal swipe slider */
+  .menu-grid {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    gap: 16px;
+    padding: 0 20px 20px;
+    margin: 0 -20px 40px;
+    scrollbar-width: none;
+  }
+  .menu-grid::-webkit-scrollbar { display: none; }
+  .menu-card {
+    flex: 0 0 82vw;
+    scroll-snap-align: start;
+  }
+  .menu-card-hidden { display: block; }
+  .menu-more-wrap { display: none; }
 
   /* Gallery */
   .gallery-item { width: 280px; }
