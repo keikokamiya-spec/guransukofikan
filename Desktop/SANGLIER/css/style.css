@@ -36,6 +36,37 @@
 
   --container-w:  1100px;
   --section-py:   80px;
+
+  --wood-grain:
+    repeating-linear-gradient(
+      89deg,
+      transparent 0px,
+      transparent 5px,
+      rgba(255,250,244,.07) 5px,
+      rgba(255,250,244,.07) 6px,
+      transparent 6px,
+      transparent 13px,
+      rgba(160,148,135,.09) 13px,
+      rgba(160,148,135,.09) 14px,
+      transparent 14px,
+      transparent 22px,
+      rgba(255,250,244,.05) 22px,
+      rgba(255,250,244,.05) 23px,
+      transparent 23px,
+      transparent 31px,
+      rgba(160,148,135,.07) 31px,
+      rgba(160,148,135,.07) 32px,
+      transparent 32px,
+      transparent 42px,
+      rgba(255,250,244,.06) 42px,
+      rgba(255,250,244,.06) 43px,
+      transparent 43px,
+      transparent 52px,
+      rgba(160,148,135,.08) 52px,
+      rgba(160,148,135,.08) 53px,
+      transparent 53px,
+      transparent 62px
+    );
 }
 
 /* ---------- Reset / Base ---------- */
@@ -191,14 +222,16 @@ address { font-style: normal; }
   top: 0; left: 0; right: 0;
   z-index: 1000;
   padding: 16px 0;
-  background: rgba(189, 181, 173, 0.88);
+  background-color: rgba(189, 181, 173, 0.88);
+  background-image: var(--wood-grain);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   box-shadow: 0 1px 0 rgba(139,111,78,.12);
-  transition: background var(--transition), box-shadow var(--transition), padding var(--transition);
+  transition: background-color var(--transition), box-shadow var(--transition), padding var(--transition);
 }
 .header.is-scrolled {
-  background: rgba(189, 181, 173, 0.97);
+  background-color: rgba(189, 181, 173, 0.97);
+  background-image: var(--wood-grain);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   box-shadow: 0 2px 12px rgba(139,111,78,.15);
@@ -774,7 +807,8 @@ address { font-style: normal; }
    FOOTER
    ============================================================ */
 .footer {
-  background: #BDB5AD;
+  background-color: #BDB5AD;
+  background-image: var(--wood-grain);
   color: var(--text-dark);
   padding-block: 56px 32px;
 }
