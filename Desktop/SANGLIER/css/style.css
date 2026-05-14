@@ -535,7 +535,8 @@ address { font-style: normal; }
    MENU
    ============================================================ */
 .menu {
-  background: var(--greige);
+  background-color: #BDB5AD;
+  background-image: var(--wood-grain);
   position: relative;
   overflow: hidden;
 }
