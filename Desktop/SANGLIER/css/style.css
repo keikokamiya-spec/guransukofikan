@@ -223,7 +223,6 @@ address { font-style: normal; }
   z-index: 1000;
   padding: 16px 0;
   background-color: rgba(124, 154, 126, 0.88);
-  background-image: var(--wood-grain);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   box-shadow: 0 1px 0 rgba(80,110,82,.2);
@@ -231,7 +230,6 @@ address { font-style: normal; }
 }
 .header.is-scrolled {
   background-color: rgba(124, 154, 126, 0.97);
-  background-image: var(--wood-grain);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   box-shadow: 0 2px 12px rgba(139,111,78,.15);
@@ -809,7 +807,6 @@ address { font-style: normal; }
    ============================================================ */
 .footer {
   background-color: #7C9A7E;
-  background-image: var(--wood-grain);
   color: var(--white);
   padding-block: 56px 32px;
 }
