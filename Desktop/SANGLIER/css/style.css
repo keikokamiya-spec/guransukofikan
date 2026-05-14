@@ -75,7 +75,7 @@ html { scroll-behavior: smooth; font-size: 16px; }
 body {
   font-family: var(--font-jp-sans);
   color: var(--text-dark);
-  background: var(--greige-light);
+  background: #E1D8CF;
   line-height: 1.8;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
@@ -436,7 +436,7 @@ address { font-style: normal; }
 /* ============================================================
    ABOUT
    ============================================================ */
-.about { background: var(--greige-light); }
+.about { background: #E1D8CF; }
 
 .about__grid {
   display: grid;
@@ -654,7 +654,7 @@ address { font-style: normal; }
 /* ============================================================
    INSTAGRAM
    ============================================================ */
-.instagram { background: var(--greige-light); }
+.instagram { background: #E1D8CF; }
 
 .instagram__handle {
   text-align: center;
@@ -708,7 +708,7 @@ address { font-style: normal; }
 /* ============================================================
    INFO
    ============================================================ */
-.info { background: var(--greige); }
+.info { background: #E1D8CF; }
 
 .info__grid {
   display: grid;
