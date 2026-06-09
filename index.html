@@ -41,16 +41,41 @@
       border-bottom: 1px solid var(--border);
       backdrop-filter: blur(4px);
     }
-    .nav { max-width: 1200px; margin: 0 auto; padding: 0 32px; display: flex; align-items: center; height: 64px; }
+    .nav {
+      max-width: 1200px; margin: 0 auto;
+      padding: 0 24px;
+      display: flex; align-items: center; height: 64px;
+      gap: 16px;
+    }
     .logo { flex: 0 0 auto; text-decoration: none; color: var(--text); }
     .logo-sub { display: block; font-size: 10px; letter-spacing: 0.18em; color: var(--text-light); font-weight: 300; }
-    .logo-name { display: block; font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 600; line-height: 1.1; }
-    .nav-menu { flex: 1; display: flex; justify-content: center; gap: 36px; list-style: none; }
+    .logo-name { display: block; font-family: 'Noto Sans JP', sans-serif; font-size: 18px; font-weight: 500; line-height: 1.2; }
+    .nav-menu { flex: 1; display: flex; justify-content: center; gap: 32px; list-style: none; }
     .nav-menu a { text-decoration: none; color: var(--text-mid); font-size: 13px; letter-spacing: 0.1em; transition: color 0.2s; }
     .nav-menu a:hover { color: var(--accent); }
-    .header-phone { font-size: 13px; color: var(--accent); letter-spacing: 0.04em; text-decoration: none; font-weight: 400; }
-    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; }
-    .hamburger span { display: block; width: 22px; height: 1.5px; background: var(--text); }
+    .header-phone { font-size: 13px; color: var(--accent); letter-spacing: 0.04em; text-decoration: none; font-weight: 500; white-space: nowrap; }
+    .hamburger {
+      display: none; flex-direction: column; justify-content: center; gap: 5px;
+      cursor: pointer; padding: 8px; margin-left: auto; flex-shrink: 0;
+      background: none; border: none;
+    }
+    .hamburger span { display: block; width: 22px; height: 1.5px; background: var(--text); transition: all 0.3s; }
+
+    /* Mobile nav overlay */
+    .mobile-nav {
+      display: none;
+      position: fixed;
+      top: 64px; left: 0; right: 0;
+      background: rgba(245,240,232,0.98);
+      border-bottom: 1px solid var(--border);
+      z-index: 99;
+      padding: 8px 0 16px;
+    }
+    .mobile-nav.open { display: block; }
+    .mobile-nav li { list-style: none; border-bottom: 1px solid var(--border); }
+    .mobile-nav li:last-child { border-bottom: none; }
+    .mobile-nav a { display: block; padding: 14px 24px; text-decoration: none; color: var(--text-mid); font-size: 14px; }
+    .mobile-nav .mobile-phone { display: block; padding: 14px 24px; color: var(--accent); font-size: 15px; font-weight: 500; text-decoration: none; }
 
     /* ─── MAIN VISUAL ─── */
     .main-content {
@@ -69,116 +94,117 @@
       transition: opacity 1.2s ease;
     }
     .store-photo.active { opacity: 1; }
-    .slide-placeholder {
-      position: absolute; inset: 0;
-      display: flex; align-items: center; justify-content: center;
-      flex-direction: column; gap: 12px;
-      background: linear-gradient(135deg, #2c1e12 0%, #3a5c3a 100%);
-    }
-    .slide-placeholder span { font-size: 48px; opacity: 0.4; }
-    .slide-placeholder p { font-size: 12px; color: rgba(80,60,40,0.5); letter-spacing: 0.1em; }
-    .slide-dots { position: absolute; bottom: 24px; left: 50%; transform: translateX(-50%); display: flex; gap: 8px; }
+    .slide-dots { position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); display: flex; gap: 8px; z-index: 2; }
     .dot { width: 7px; height: 7px; border-radius: 50%; background: rgba(255,255,255,0.5); cursor: pointer; transition: background 0.3s; }
     .dot.active { background: #ffffff; }
 
     .main-right {
-      flex: 0 0 420px;
+      flex: 0 0 400px;
       display: flex; flex-direction: column; justify-content: center; align-items: flex-start;
-      padding: 60px 52px;
+      padding: 60px 48px;
       background: var(--bg);
     }
     .main-label { font-size: 10px; letter-spacing: 0.25em; color: var(--accent-light); text-transform: uppercase; margin-bottom: 20px; }
-    .main-heading { font-family: 'Playfair Display', serif; font-size: 30px; font-weight: 400; line-height: 1.5; color: var(--text); margin-bottom: 8px; }
-    .main-heading-jp { font-family: 'Noto Sans JP', sans-serif; font-size: 15px; font-weight: 300; color: var(--text-mid); letter-spacing: 0.05em; line-height: 2; margin-bottom: 28px; }
-    .main-description { font-size: 13px; color: var(--text-mid); line-height: 2.1; margin-bottom: 36px; max-width: 300px; }
+    .main-heading { font-family: 'Playfair Display', serif; font-size: 28px; font-weight: 400; line-height: 1.5; color: var(--text); margin-bottom: 8px; }
+    .main-heading-jp { font-size: 14px; font-weight: 300; color: var(--text-mid); letter-spacing: 0.05em; line-height: 2; margin-bottom: 28px; }
+    .main-description { font-size: 13px; color: var(--text-mid); line-height: 2.1; margin-bottom: 36px; }
     .cta-button {
-      display: inline-block; padding: 14px 36px;
+      display: inline-block; padding: 14px 32px;
       background: var(--accent); color: #fff;
       text-decoration: none; font-size: 13px;
       letter-spacing: 0.12em; transition: background 0.2s, transform 0.2s;
     }
     .cta-button:hover { background: #2a4a2a; transform: translateY(-1px); }
-    .cta-sub { margin-top: 16px; font-size: 11px; color: var(--text-light); letter-spacing: 0.05em; }
+    .cta-sub { margin-top: 14px; font-size: 11px; color: var(--text-light); }
 
     /* ─── CONCEPT ─── */
     .concept-section { background: var(--bg-warm); padding: 80px 0; }
-    .concept-inner { max-width: 760px; margin: 0 auto; padding: 0 32px; text-align: center; }
+    .concept-inner { max-width: 760px; margin: 0 auto; padding: 0 24px; text-align: center; }
     .concept-label { font-size: 10px; letter-spacing: 0.28em; color: #8ec98e; text-transform: uppercase; margin-bottom: 14px; }
-    .concept-title { font-family: 'Playfair Display', serif; font-size: 28px; font-weight: 400; margin-bottom: 28px; line-height: 1.5; color: #f5f0e8; }
+    .concept-title { font-family: 'Playfair Display', serif; font-size: 26px; font-weight: 400; margin-bottom: 28px; line-height: 1.6; color: #f5f0e8; }
     .concept-text { font-size: 14px; color: rgba(245,240,232,0.75); line-height: 2.4; }
 
     /* ─── SECTION COMMON ─── */
-    section { padding: 88px 0; }
-    .section-inner { max-width: 1100px; margin: 0 auto; padding: 0 32px; }
+    section { padding: 80px 0; }
+    .section-inner { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
     .section-label { font-size: 10px; letter-spacing: 0.28em; color: var(--accent-light); text-transform: uppercase; margin-bottom: 10px; }
-    .section-title { font-family: 'Playfair Display', serif; font-size: 32px; font-weight: 400; margin-bottom: 6px; }
-    .section-title-jp { font-size: 13px; color: var(--text-mid); letter-spacing: 0.1em; margin-bottom: 48px; }
+    .section-title { font-family: 'Playfair Display', serif; font-size: 30px; font-weight: 400; margin-bottom: 6px; }
+    .section-title-jp { font-size: 13px; color: var(--text-mid); letter-spacing: 0.1em; margin-bottom: 40px; }
 
     /* ─── MENU ─── */
     .menu-section { background: var(--bg-soft); }
     .carousel-wrapper { overflow: hidden; }
-    .carousel-track { display: flex; gap: 24px; transition: transform 0.5s ease; }
-    .menu-card { flex: 0 0 260px; background: var(--bg); border: 1px solid var(--border); }
+    .carousel-track { display: flex; gap: 20px; transition: transform 0.4s ease; }
+    .menu-card { flex: 0 0 240px; background: var(--bg); border: 1px solid var(--border); }
     .menu-card-img {
-      width: 100%; height: 180px; object-fit: cover;
+      width: 100%; height: 170px;
       background: var(--bg-warm);
-      display: flex; align-items: center; justify-content: center;
-      color: var(--text-light); font-size: 11px;
+      overflow: hidden;
     }
-    .menu-card-body { padding: 20px 22px 24px; }
+    .menu-card-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .menu-card-img img.contain { object-fit: contain; background: #ede6d8; }
+    .menu-card-body { padding: 18px 20px 22px; }
     .menu-card-name { font-size: 14px; font-weight: 400; margin-bottom: 6px; }
-    .menu-card-desc { font-size: 12px; color: var(--text-mid); line-height: 1.9; margin-bottom: 12px; }
-    .menu-card-price { font-family: 'Playfair Display', serif; font-size: 18px; color: var(--accent); }
-    .carousel-nav { display: flex; gap: 12px; margin-top: 28px; }
+    .menu-card-desc { font-size: 12px; color: var(--text-mid); line-height: 1.9; margin-bottom: 10px; }
+    .menu-card-price { font-family: 'Playfair Display', serif; font-size: 16px; color: var(--accent); }
+    .carousel-nav { display: flex; gap: 12px; margin-top: 24px; }
     .carousel-btn { width: 40px; height: 40px; border: 1px solid var(--border); background: var(--bg); cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 16px; color: var(--text-mid); transition: all 0.2s; }
     .carousel-btn:hover { border-color: var(--accent); color: var(--accent); }
 
     /* ─── LOCATION ─── */
     .location-section { background: var(--bg); }
     .location-content { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
-    .detail-item { display: flex; padding: 18px 0; border-bottom: 1px solid var(--border); }
+    .detail-item { display: flex; padding: 16px 0; border-bottom: 1px solid var(--border); }
     .detail-item:first-child { border-top: 1px solid var(--border); }
-    .detail-item strong { flex: 0 0 100px; font-size: 12px; font-weight: 400; letter-spacing: 0.08em; color: var(--text-mid); }
+    .detail-item strong { flex: 0 0 90px; font-size: 12px; font-weight: 400; letter-spacing: 0.08em; color: var(--text-mid); padding-top: 2px; }
     .detail-item p { font-size: 13px; line-height: 1.9; color: var(--text); }
-    .location-note { margin-top: 28px; font-size: 12px; color: var(--text-light); line-height: 1.9; }
+    .location-note { margin-top: 24px; font-size: 12px; color: var(--text-light); line-height: 1.9; }
 
     /* ─── CONTACT ─── */
-    .contact-section { background: var(--bg-warm); text-align: center; padding: 72px 32px; }
+    .contact-section { background: var(--bg-warm); text-align: center; padding: 72px 24px; }
     .contact-section .section-label { color: #8ec98e; }
     .contact-section .section-title { color: #f5f0e8; }
     .contact-section .section-title-jp { color: rgba(245,240,232,0.6); }
     .contact-phone {
-      display: inline-block; font-family: 'Playfair Display', serif; font-size: 34px;
+      display: inline-block; font-family: 'Playfair Display', serif; font-size: 32px;
       color: #8ec98e; text-decoration: none; letter-spacing: 0.04em;
       border-bottom: 1px solid #5a8c5a; padding-bottom: 4px;
     }
-    .contact-hours { margin-top: 18px; font-size: 12px; color: rgba(245,240,232,0.7); letter-spacing: 0.06em; line-height: 2; }
+    .contact-hours { margin-top: 18px; font-size: 12px; color: rgba(245,240,232,0.7); line-height: 2; }
 
     /* ─── FOOTER ─── */
-    .footer { background: #1a1008; color: rgba(245,240,232,0.7); padding: 56px 32px 32px; }
+    .footer { background: #1a1008; color: rgba(245,240,232,0.7); padding: 56px 24px 32px; }
     .footer-content { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 40px; padding-bottom: 40px; border-bottom: 1px solid rgba(255,255,255,0.1); }
-    .footer-logo-name { font-family: 'Playfair Display', serif; font-size: 20px; color: #fff; margin-bottom: 10px; }
-    .footer-logo-sub { font-size: 11px; letter-spacing: 0.14em; color: rgba(255,255,255,0.35); margin-bottom: 16px; }
+    .footer-logo-name { font-family: 'Noto Sans JP', sans-serif; font-size: 18px; font-weight: 500; color: #fff; margin-bottom: 10px; }
+    .footer-logo-sub { font-size: 11px; letter-spacing: 0.14em; color: rgba(255,255,255,0.35); margin-bottom: 12px; }
     .footer-section h4 { font-size: 11px; letter-spacing: 0.18em; color: rgba(255,255,255,0.35); margin-bottom: 14px; text-transform: uppercase; }
     .footer-section p, .footer-section address { font-size: 12px; line-height: 2; font-style: normal; }
-    .footer-bottom { max-width: 1100px; margin: 0 auto; padding-top: 24px; display: flex; justify-content: space-between; font-size: 11px; color: rgba(255,255,255,0.3); }
+    .footer-bottom { max-width: 1100px; margin: 0 auto; padding-top: 24px; display: flex; justify-content: space-between; font-size: 11px; color: rgba(255,255,255,0.3); flex-wrap: wrap; gap: 8px; }
 
     /* ─── RESPONSIVE ─── */
     @media (max-width: 900px) {
       .main-content { flex-direction: column; height: auto; }
-      .main-left { height: 54vw; min-height: 280px; }
-      .main-right { flex: none; padding: 48px 28px; }
+      .main-left { height: 60vw; min-height: 260px; max-height: 420px; }
+      .main-right { flex: none; padding: 40px 24px; }
       .location-content { grid-template-columns: 1fr; gap: 32px; }
       .footer-content { grid-template-columns: 1fr; gap: 28px; }
-      .nav-menu { display: none; }
+      .nav-menu { display: none !important; }
+      .header-phone { display: none; }
       .hamburger { display: flex; }
     }
     @media (max-width: 600px) {
-      .main-right { padding: 36px 20px; }
-      .main-heading { font-size: 24px; }
-      .section-inner { padding: 0 20px; }
-      .concept-inner { padding: 0 20px; }
-      .menu-card { flex: 0 0 220px; }
+      .main-left { height: 70vw; }
+      .main-right { padding: 32px 20px; }
+      .main-heading { font-size: 22px; }
+      .main-description { font-size: 13px; }
+      .section-inner { padding: 0 16px; }
+      .concept-inner { padding: 0 16px; }
+      .concept-title { font-size: 22px; }
+      .concept-text { font-size: 13px; }
+      section { padding: 60px 0; }
+      .menu-card { flex: 0 0 200px; }
+      .carousel-track { gap: 16px; }
+      .contact-phone { font-size: 26px; }
     }
   </style>
 </head>
@@ -198,11 +224,22 @@
         <li><a href="#contact">お問い合わせ</a></li>
       </ul>
       <a href="tel:0664371755" class="header-phone">06-6437-1755</a>
-      <div class="hamburger" onclick="toggleMenu()">
+      <button class="hamburger" onclick="toggleMenu()" aria-label="メニューを開く">
         <span></span><span></span><span></span>
-      </div>
+      </button>
     </nav>
   </header>
+
+  <!-- MOBILE NAV -->
+  <nav class="mobile-nav" id="mobileNav">
+    <ul>
+      <li><a href="#concept" onclick="toggleMenu()">お店について</a></li>
+      <li><a href="#menu" onclick="toggleMenu()">メニュー</a></li>
+      <li><a href="#location" onclick="toggleMenu()">アクセス</a></li>
+      <li><a href="#contact" onclick="toggleMenu()">お問い合わせ</a></li>
+      <li><a href="tel:0664371755" class="mobile-phone">☎ 06-6437-1755</a></li>
+    </ul>
+  </nav>
 
   <!-- MAIN VISUAL -->
   <main class="main-content">
@@ -254,41 +291,41 @@
         <div class="carousel-track" id="carouselTrack">
 
           <div class="menu-card">
-            <div class="menu-card-img" style="padding:0;">
-              <img src="img/menu-morning.png" alt="モーニングセット" style="width:100%;height:100%;object-fit:cover;">
+            <div class="menu-card-img">
+              <img src="img/menu-morning.png" alt="モーニングセット">
             </div>
             <div class="menu-card-body">
               <p class="menu-card-name">モーニングセット</p>
-              <p class="menu-card-desc">朝7時20分からお召し上がりいただける、グランス珈琲館の定番モーニング。コーヒーとともに一日のスタートを。</p>
+              <p class="menu-card-desc">朝7時20分からお召し上がりいただける定番モーニング。コーヒーとともに一日のスタートを。</p>
               <p class="menu-card-price">詳しくはお電話で</p>
             </div>
           </div>
 
           <div class="menu-card">
-            <div class="menu-card-img" style="padding:0;">
-              <img src="img/menu-coffee.png" alt="コーヒーゼリー" style="width:100%;height:100%;object-fit:cover;">
+            <div class="menu-card-img">
+              <img src="img/menu-coffee.png" alt="コーヒーゼリー">
             </div>
             <div class="menu-card-body">
-              <p class="menu-card-name">コーヒー</p>
-              <p class="menu-card-desc">昔ながらの純喫茶スタイルで丁寧に仕上げた一杯。カウンター席でも2階の席でも、じっくりとお楽しみいただけます。</p>
+              <p class="menu-card-name">コーヒーゼリー</p>
+              <p class="menu-card-desc">純喫茶ならではの甘味。濃いコーヒーのゼリーにクリームをのせた定番デザートです。</p>
               <p class="menu-card-price">純喫茶の定番</p>
             </div>
           </div>
 
           <div class="menu-card">
-            <div class="menu-card-img" style="padding:0;">
-              <img src="img/menu-hashedbf.png" alt="ハッシュドビーフ" style="width:100%;height:100%;object-fit:cover;">
+            <div class="menu-card-img">
+              <img src="img/menu-hashedbf.png" alt="ハッシュドビーフ">
             </div>
             <div class="menu-card-body">
               <p class="menu-card-name">ハッシュドビーフ</p>
-              <p class="menu-card-desc">喫茶店ならではの洋食メニュー。懐かしい味わいのハッシュドビーフは、ランチタイムにぴったりの一品です。</p>
+              <p class="menu-card-desc">喫茶店ならではの洋食メニュー。懐かしい味わいのハッシュドビーフはランチにぴったり。</p>
               <p class="menu-card-price">人気の洋食メニュー</p>
             </div>
           </div>
 
           <div class="menu-card">
-            <div class="menu-card-img" style="padding:0;">
-              <img src="img/menu-hotcake.png" alt="ホットケーキ" style="width:100%;height:100%;object-fit:contain;background:#ede6d8;">
+            <div class="menu-card-img">
+              <img src="img/menu-hotcake.png" alt="ホットケーキ" class="contain">
             </div>
             <div class="menu-card-body">
               <p class="menu-card-name">ホットケーキ</p>
@@ -298,8 +335,8 @@
           </div>
 
           <div class="menu-card">
-            <div class="menu-card-img" style="padding:0;">
-              <img src="img/menu-omuraisu.png" alt="オムライス" style="width:100%;height:100%;object-fit:cover;">
+            <div class="menu-card-img">
+              <img src="img/menu-omuraisu.png" alt="オムライス">
             </div>
             <div class="menu-card-body">
               <p class="menu-card-name">オムライス</p>
@@ -325,10 +362,9 @@
       <p class="section-title-jp">武庫之荘駅北口から徒歩1分</p>
       <div class="location-content">
         <div>
-          <!-- <img src="img/location.jpg" alt="グランス珈琲館 外観" style="width:100%;display:block;margin-bottom:16px;"> -->
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3278.144296038688!2d135.39115017574656!3d34.751957772901534!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6000f1c2855a65eb%3A0x943d532e00374644!2z44Kw44Op44Oz44K554-I55Cy6aSoIOatpuW6q-S5i-iNmOW6lw!5e0!3m2!1sja!2sjp!4v1781006499305!5m2!1sja!2sjp"
-            width="600" height="450" style="border:0;width:100%;display:block;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+            width="600" height="400" style="border:0;width:100%;display:block;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
           </iframe>
         </div>
         <div class="location-info">
@@ -418,7 +454,6 @@
     let currentSlide = 0;
 
     if (photos.length > 0) {
-      document.getElementById('placeholder').style.display = 'none';
       photos.forEach((_, i) => {
         const dot = document.createElement('div');
         dot.className = 'dot' + (i === 0 ? ' active' : '');
@@ -438,31 +473,32 @@
 
     // ─── Carousel
     let carouselPos = 0;
-    const cardWidth = 260 + 24;
 
     function slideCarousel(dir) {
       const track = document.getElementById('carouselTrack');
+      const card = track.querySelector('.menu-card');
+      const cardWidth = card.offsetWidth + 20; // gap=20px
       const cards = track.querySelectorAll('.menu-card');
-      const maxPos = Math.max(0, cards.length - 3);
+      const visibleCount = Math.floor(track.parentElement.offsetWidth / cardWidth);
+      const maxPos = Math.max(0, cards.length - visibleCount);
       carouselPos = Math.max(0, Math.min(carouselPos + dir, maxPos));
       track.style.transform = `translateX(-${carouselPos * cardWidth}px)`;
     }
 
     // ─── Mobile menu toggle
     function toggleMenu() {
-      const menu = document.querySelector('.nav-menu');
-      if (menu.style.display === 'flex') {
-        menu.style.display = '';
-      } else {
-        Object.assign(menu.style, {
-          display: 'flex', flexDirection: 'column', position: 'fixed',
-          top: '64px', left: 0, right: 0, background: '#f5f0e8',
-          padding: '20px 32px', gap: '0', borderBottom: '1px solid #e4dbd0'
-        });
-        menu.querySelectorAll('li').forEach(li => li.style.borderBottom = '1px solid #ede7de');
-        menu.querySelectorAll('a').forEach(a => Object.assign(a.style, { display: 'block', padding: '14px 0' }));
-      }
+      const nav = document.getElementById('mobileNav');
+      nav.classList.toggle('open');
     }
+
+    // Close mobile menu on outside click
+    document.addEventListener('click', function(e) {
+      const nav = document.getElementById('mobileNav');
+      const hamburger = document.querySelector('.hamburger');
+      if (nav.classList.contains('open') && !nav.contains(e.target) && !hamburger.contains(e.target)) {
+        nav.classList.remove('open');
+      }
+    });
   </script>
 </body>
 </html>
