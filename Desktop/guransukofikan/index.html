@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>カフェナルト | 宝塚市売布の喫茶店</title>
+  <title>グランス珈琲館 | 武庫之荘の純喫茶</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
@@ -12,14 +12,14 @@
 
     :root {
       --bg: #ffffff;
-      --bg-soft: #faf8f5;
-      --bg-warm: #f4ede3;
-      --accent: #8b6b4a;
-      --accent-light: #c9a87a;
-      --text: #2c2c2c;
-      --text-mid: #666666;
-      --text-light: #999999;
-      --border: #e8ddd0;
+      --bg-soft: #f9f7f4;
+      --bg-warm: #f2ece3;
+      --accent: #6b5942;
+      --accent-light: #b89870;
+      --text: #2a2a2a;
+      --text-mid: #666;
+      --text-light: #aaa;
+      --border: #e4dbd0;
     }
 
     html { scroll-behavior: smooth; }
@@ -37,7 +37,7 @@
       position: fixed;
       top: 0; left: 0; right: 0;
       z-index: 100;
-      background: rgba(255,255,255,0.96);
+      background: rgba(255,255,255,0.95);
       border-bottom: 1px solid var(--border);
       backdrop-filter: blur(4px);
     }
@@ -48,7 +48,7 @@
     .nav-menu { flex: 1; display: flex; justify-content: center; gap: 36px; list-style: none; }
     .nav-menu a { text-decoration: none; color: var(--text-mid); font-size: 13px; letter-spacing: 0.1em; transition: color 0.2s; }
     .nav-menu a:hover { color: var(--accent); }
-    .header-phone { font-size: 13px; color: var(--accent); letter-spacing: 0.05em; text-decoration: none; font-weight: 400; }
+    .header-phone { font-size: 13px; color: var(--accent); letter-spacing: 0.04em; text-decoration: none; font-weight: 400; }
     .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; }
     .hamburger span { display: block; width: 22px; height: 1.5px; background: var(--text); }
 
@@ -59,24 +59,24 @@
       height: calc(100vh - 64px);
       min-height: 520px;
     }
-    .main-left { flex: 1; position: relative; overflow: hidden; background: #e8ddd0; }
-    .store-slideshow { position: absolute; inset: 0; }
+    .main-left { flex: 1; position: relative; overflow: hidden; background: #d9cfc3; }
+    .store-slideshow { width: 100%; height: 100%; position: relative; }
     .store-photo {
       position: absolute; inset: 0;
       width: 100%; height: 100%;
       object-fit: cover;
       opacity: 0;
-      transition: opacity 1s ease;
+      transition: opacity 1.2s ease;
     }
     .store-photo.active { opacity: 1; }
     .slide-placeholder {
       position: absolute; inset: 0;
       display: flex; align-items: center; justify-content: center;
       flex-direction: column; gap: 12px;
-      background: linear-gradient(135deg, #e8ddd0 0%, #d4c5b2 100%);
+      background: linear-gradient(135deg, #d9cfc3 0%, #c5b89e 100%);
     }
     .slide-placeholder span { font-size: 48px; opacity: 0.4; }
-    .slide-placeholder p { font-size: 12px; color: var(--text-light); letter-spacing: 0.1em; }
+    .slide-placeholder p { font-size: 12px; color: rgba(80,60,40,0.5); letter-spacing: 0.1em; }
     .slide-dots { position: absolute; bottom: 24px; left: 50%; transform: translateX(-50%); display: flex; gap: 8px; }
     .dot { width: 7px; height: 7px; border-radius: 50%; background: rgba(255,255,255,0.5); cursor: pointer; transition: background 0.3s; }
     .dot.active { background: #ffffff; }
@@ -88,27 +88,24 @@
       background: var(--bg);
     }
     .main-label { font-size: 10px; letter-spacing: 0.25em; color: var(--accent-light); text-transform: uppercase; margin-bottom: 20px; }
-    .main-heading {
-      font-family: 'Playfair Display', serif;
-      font-size: 30px; font-weight: 400;
-      line-height: 1.5;
-      color: var(--text);
-      margin-bottom: 8px;
-    }
-    .main-heading-jp { font-family: 'Noto Sans JP', sans-serif; font-size: 16px; font-weight: 300; color: var(--text-mid); letter-spacing: 0.05em; line-height: 1.9; margin-bottom: 32px; }
-    .main-description { font-size: 13px; color: var(--text-mid); line-height: 2; margin-bottom: 36px; max-width: 300px; }
+    .main-heading { font-family: 'Playfair Display', serif; font-size: 30px; font-weight: 400; line-height: 1.5; color: var(--text); margin-bottom: 8px; }
+    .main-heading-jp { font-family: 'Noto Sans JP', sans-serif; font-size: 15px; font-weight: 300; color: var(--text-mid); letter-spacing: 0.05em; line-height: 2; margin-bottom: 28px; }
+    .main-description { font-size: 13px; color: var(--text-mid); line-height: 2.1; margin-bottom: 36px; max-width: 300px; }
     .cta-button {
-      display: inline-block;
-      padding: 14px 36px;
-      background: var(--accent);
-      color: #fff;
-      text-decoration: none;
-      font-size: 13px;
-      letter-spacing: 0.12em;
-      transition: background 0.2s, transform 0.2s;
+      display: inline-block; padding: 14px 36px;
+      background: var(--accent); color: #fff;
+      text-decoration: none; font-size: 13px;
+      letter-spacing: 0.12em; transition: background 0.2s, transform 0.2s;
     }
-    .cta-button:hover { background: #6e5239; transform: translateY(-1px); }
+    .cta-button:hover { background: #4e3f2e; transform: translateY(-1px); }
     .cta-sub { margin-top: 16px; font-size: 11px; color: var(--text-light); letter-spacing: 0.05em; }
+
+    /* ─── CONCEPT ─── */
+    .concept-section { background: var(--bg-warm); padding: 80px 0; }
+    .concept-inner { max-width: 760px; margin: 0 auto; padding: 0 32px; text-align: center; }
+    .concept-label { font-size: 10px; letter-spacing: 0.28em; color: var(--accent-light); text-transform: uppercase; margin-bottom: 14px; }
+    .concept-title { font-family: 'Playfair Display', serif; font-size: 28px; font-weight: 400; margin-bottom: 28px; line-height: 1.5; }
+    .concept-text { font-size: 14px; color: var(--text-mid); line-height: 2.4; }
 
     /* ─── SECTION COMMON ─── */
     section { padding: 88px 0; }
@@ -117,90 +114,67 @@
     .section-title { font-family: 'Playfair Display', serif; font-size: 32px; font-weight: 400; margin-bottom: 6px; }
     .section-title-jp { font-size: 13px; color: var(--text-mid); letter-spacing: 0.1em; margin-bottom: 48px; }
 
-    /* ─── MENU (Products) ─── */
+    /* ─── MENU ─── */
     .menu-section { background: var(--bg-soft); }
     .carousel-wrapper { overflow: hidden; }
     .carousel-track { display: flex; gap: 24px; transition: transform 0.5s ease; }
-    .menu-card {
-      flex: 0 0 260px;
-      background: var(--bg);
-      border: 1px solid var(--border);
-    }
+    .menu-card { flex: 0 0 260px; background: var(--bg); border: 1px solid var(--border); }
     .menu-card-img {
-      width: 100%; height: 180px;
-      object-fit: cover;
+      width: 100%; height: 180px; object-fit: cover;
       background: var(--bg-warm);
       display: flex; align-items: center; justify-content: center;
-      color: var(--text-light); font-size: 11px; letter-spacing: 0.08em;
+      color: var(--text-light); font-size: 11px;
     }
     .menu-card-body { padding: 20px 22px 24px; }
     .menu-card-name { font-size: 14px; font-weight: 400; margin-bottom: 6px; }
     .menu-card-desc { font-size: 12px; color: var(--text-mid); line-height: 1.9; margin-bottom: 12px; }
     .menu-card-price { font-family: 'Playfair Display', serif; font-size: 18px; color: var(--accent); }
     .carousel-nav { display: flex; gap: 12px; margin-top: 28px; }
-    .carousel-btn {
-      width: 40px; height: 40px;
-      border: 1px solid var(--border);
-      background: var(--bg);
-      cursor: pointer; display: flex; align-items: center; justify-content: center;
-      font-size: 16px; color: var(--text-mid); transition: all 0.2s;
-    }
+    .carousel-btn { width: 40px; height: 40px; border: 1px solid var(--border); background: var(--bg); cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 16px; color: var(--text-mid); transition: all 0.2s; }
     .carousel-btn:hover { border-color: var(--accent); color: var(--accent); }
 
     /* ─── LOCATION ─── */
     .location-section { background: var(--bg); }
     .location-content { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
-    .location-image { width: 100%; }
-    .location-map { width: 100%; aspect-ratio: 4/3; border: none; display: block; }
-    .location-info {}
     .detail-item { display: flex; padding: 18px 0; border-bottom: 1px solid var(--border); }
     .detail-item:first-child { border-top: 1px solid var(--border); }
     .detail-item strong { flex: 0 0 100px; font-size: 12px; font-weight: 400; letter-spacing: 0.08em; color: var(--text-mid); }
     .detail-item p { font-size: 13px; line-height: 1.9; color: var(--text); }
     .location-note { margin-top: 28px; font-size: 12px; color: var(--text-light); line-height: 1.9; }
 
-    /* ─── SNS / CONTACT ─── */
+    /* ─── CONTACT ─── */
     .contact-section { background: var(--bg-warm); text-align: center; padding: 72px 32px; }
-    .contact-section .section-title { margin-bottom: 4px; }
-    .contact-section .section-title-jp { margin-bottom: 36px; }
     .contact-phone {
-      display: inline-block;
-      font-family: 'Playfair Display', serif;
-      font-size: 34px;
-      color: var(--accent);
-      text-decoration: none;
-      letter-spacing: 0.04em;
-      border-bottom: 1px solid var(--accent-light);
-      padding-bottom: 4px;
+      display: inline-block; font-family: 'Playfair Display', serif; font-size: 34px;
+      color: var(--accent); text-decoration: none; letter-spacing: 0.04em;
+      border-bottom: 1px solid var(--accent-light); padding-bottom: 4px;
     }
     .contact-hours { margin-top: 18px; font-size: 12px; color: var(--text-mid); letter-spacing: 0.06em; line-height: 2; }
 
     /* ─── FOOTER ─── */
-    .footer { background: #2a2420; color: rgba(255,255,255,0.7); padding: 56px 32px 32px; }
+    .footer { background: #231e19; color: rgba(255,255,255,0.7); padding: 56px 32px 32px; }
     .footer-content { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 40px; padding-bottom: 40px; border-bottom: 1px solid rgba(255,255,255,0.1); }
-    .footer-section {}
     .footer-logo-name { font-family: 'Playfair Display', serif; font-size: 20px; color: #fff; margin-bottom: 10px; }
-    .footer-logo-sub { font-size: 11px; letter-spacing: 0.14em; color: rgba(255,255,255,0.4); margin-bottom: 16px; }
-    .footer-section h4 { font-size: 11px; letter-spacing: 0.18em; color: rgba(255,255,255,0.4); margin-bottom: 14px; text-transform: uppercase; }
+    .footer-logo-sub { font-size: 11px; letter-spacing: 0.14em; color: rgba(255,255,255,0.35); margin-bottom: 16px; }
+    .footer-section h4 { font-size: 11px; letter-spacing: 0.18em; color: rgba(255,255,255,0.35); margin-bottom: 14px; text-transform: uppercase; }
     .footer-section p, .footer-section address { font-size: 12px; line-height: 2; font-style: normal; }
-    .footer-bottom { max-width: 1100px; margin: 0 auto; padding-top: 24px; display: flex; justify-content: space-between; align-items: center; font-size: 11px; color: rgba(255,255,255,0.3); }
+    .footer-bottom { max-width: 1100px; margin: 0 auto; padding-top: 24px; display: flex; justify-content: space-between; font-size: 11px; color: rgba(255,255,255,0.3); }
 
     /* ─── RESPONSIVE ─── */
     @media (max-width: 900px) {
       .main-content { flex-direction: column; height: auto; }
-      .main-left { height: 70vw; min-height: 320px; }
+      .main-left { height: 54vw; min-height: 280px; }
       .main-right { flex: none; padding: 48px 28px; }
       .location-content { grid-template-columns: 1fr; gap: 32px; }
       .footer-content { grid-template-columns: 1fr; gap: 28px; }
       .nav-menu { display: none; }
       .hamburger { display: flex; }
-      .header-phone { display: none; }
     }
     @media (max-width: 600px) {
-      .main-left { height: 85vw; min-height: 280px; }
       .main-right { padding: 36px 20px; }
       .main-heading { font-size: 24px; }
       .section-inner { padding: 0 20px; }
+      .concept-inner { padding: 0 20px; }
       .menu-card { flex: 0 0 220px; }
     }
   </style>
@@ -211,15 +185,16 @@
   <header class="header">
     <nav class="nav">
       <a href="#" class="logo">
-        <span class="logo-sub">Takarazuka, Hyogo</span>
-        <span class="logo-name">Cafe Naruto</span>
+        <span class="logo-sub">Mukogaoka, Amagasaki</span>
+        <span class="logo-name">Grans Kohi-kan</span>
       </a>
       <ul class="nav-menu">
+        <li><a href="#concept">お店について</a></li>
         <li><a href="#menu">メニュー</a></li>
         <li><a href="#location">アクセス</a></li>
         <li><a href="#contact">お問い合わせ</a></li>
       </ul>
-      <a href="tel:0797860588" class="header-phone">0797-86-0588</a>
+      <a href="tel:0664371755" class="header-phone">06-6437-1755</a>
       <div class="hamburger" onclick="toggleMenu()">
         <span></span><span></span><span></span>
       </div>
@@ -230,74 +205,121 @@
   <main class="main-content">
     <div class="main-left">
       <div class="store-slideshow" id="slideshow">
-        <div class="slide-placeholder" id="placeholder" style="display:none;"></div>
-        <img src="img/store5.png" alt="カフェナルト外観" class="store-photo active">
-        <img src="img/store3.png" alt="カフェナルト店内" class="store-photo">
-        <img src="img/store4.png" alt="カフェナルト店内ボックス席" class="store-photo">
+        <!-- 画像フォルダに写真を追加してください -->
+        <div class="slide-placeholder" id="placeholder">
+          <span>☕</span>
+          <p>店舗写真をここに配置（img/フォルダ）</p>
+        </div>
+        <!-- 画像を追加する場合は以下を使用:
+        <img src="img/store1.jpg" alt="グランス珈琲館 外観" class="store-photo active">
+        <img src="img/store2.jpg" alt="グランス珈琲館 店内" class="store-photo">
+        <img src="img/store3.jpg" alt="グランス珈琲館 2階スペース" class="store-photo">
+        -->
         <div class="slide-dots" id="slideDots"></div>
       </div>
     </div>
     <div class="main-right">
-      <p class="main-label">Since — Takarazuka</p>
-      <h1 class="main-heading">A cup of coffee,<br>every morning.</h1>
-      <p class="main-heading-jp">売布神社の住宅街で、<br>今日も一杯のコーヒーを。</p>
+      <p class="main-label">Since — Mukogaoka</p>
+      <h1 class="main-heading">A hidden retreat,<br>just off the alley.</h1>
+      <p class="main-heading-jp">駅そばの細道を抜けると、<br>懐かしい純喫茶がある。</p>
       <p class="main-description">
-        老夫婦が丁寧に営む小さな喫茶店。<br>
-        売布神社のそばに佇む、地元の方々に長く愛されてきたお店です。<br>
-        モーニングから夕方まで、ゆっくりとした時間をお届けしています。
+        武庫之荘駅北口から徒歩わずか1分。<br>
+        細道の奥に佇む隠れ家のような喫茶店です。<br>
+        広々とした店内で、ゆったりとした時間をお過ごしください。
       </p>
-      <a href="tel:0797860588" class="cta-button">お電話でのお問い合わせ</a>
-      <p class="cta-sub">0797-86-0588</p>
+      <a href="tel:0664371755" class="cta-button">お電話でのお問い合わせ</a>
+      <p class="cta-sub">06-6437-1755</p>
     </div>
   </main>
+
+  <!-- CONCEPT SECTION -->
+  <section id="concept" class="concept-section">
+    <div class="concept-inner">
+      <p class="concept-label">About</p>
+      <h2 class="concept-title">昭和の空気が残る、<br>大衆のための喫茶空間</h2>
+      <p class="concept-text">
+        路地の奥へと足を向けると、そこにはどこか懐かしいレトロな空間が広がります。<br>
+        1階のカウンター席で過ごすも良し、2階の禁煙スペースでゆったりとくつろぐも良し。<br>
+        65席の広々とした店内で、思い思いのひとときをお楽しみください。<br>
+        朝7時20分からのオープンで、モーニングからご利用いただけます。
+      </p>
+    </div>
+  </section>
 
   <!-- MENU SECTION -->
   <section id="menu" class="menu-section">
     <div class="section-inner">
       <p class="section-label">Menu</p>
       <h2 class="section-title">メニュー</h2>
-      <p class="section-title-jp">朝からお気軽にどうぞ</p>
+      <p class="section-title-jp">朝から夜まで、ゆっくりと</p>
       <div class="carousel-wrapper">
         <div class="carousel-track" id="carouselTrack">
 
           <div class="menu-card">
-            <div class="menu-card-img" style="padding:0;">
-              <img src="img/store1.png" alt="モーニングセット" style="width:100%;height:100%;object-fit:cover;">
+            <div class="menu-card-img">
+              <!-- <img src="img/menu-morning.jpg" alt="モーニングセット" style="width:100%;height:100%;object-fit:cover;"> -->
+              <span style="font-size:32px;">🌅</span>
             </div>
             <div class="menu-card-body">
               <p class="menu-card-name">モーニングセット</p>
-              <p class="menu-card-desc">コーヒーにたまごとサラダが付いたお得なモーニング。朝の定番として地元の方々に親しまれています。</p>
-              <p class="menu-card-price">¥ 550</p>
+              <p class="menu-card-desc">朝7時20分からお召し上がりいただける、グランス珈琲館の定番モーニング。コーヒーとともに一日のスタートを。</p>
+              <p class="menu-card-price">詳しくはお電話で</p>
             </div>
           </div>
 
           <div class="menu-card">
-            <div class="menu-card-img" style="padding:0;">
-              <img src="img/store2.png" alt="コーヒー" style="width:100%;height:100%;object-fit:cover;">
+            <div class="menu-card-img">
+              <!-- <img src="img/menu-coffee.jpg" alt="コーヒー" style="width:100%;height:100%;object-fit:cover;"> -->
+              <span style="font-size:32px;">☕</span>
             </div>
             <div class="menu-card-body">
               <p class="menu-card-name">コーヒー</p>
-              <p class="menu-card-desc">マスターが丁寧に淹れる一杯。カウンターに座れば、ゆっくりとした会話も楽しめます。</p>
-              <p class="menu-card-price">¥ 450</p>
+              <p class="menu-card-desc">昔ながらの純喫茶スタイルで丁寧に仕上げた一杯。カウンター席でも2階の席でも、じっくりとお楽しみいただけます。</p>
+              <p class="menu-card-price">純喫茶の定番</p>
             </div>
           </div>
 
           <div class="menu-card">
-            <div class="menu-card-img" style="padding:0;">
-              <img src="img/toast.png" alt="トースト" style="width:100%;height:100%;object-fit:cover;">
+            <div class="menu-card-img">
+              <!-- <img src="img/menu-hashedbf.jpg" alt="ハッシュドビーフ" style="width:100%;height:100%;object-fit:cover;"> -->
+              <span style="font-size:32px;">🍛</span>
             </div>
             <div class="menu-card-body">
-              <p class="menu-card-name">トースト</p>
-              <p class="menu-card-desc">サクッと焼き上げたシンプルなトースト。コーヒーとの相性は抜群です。</p>
-              <p class="menu-card-price">単品でもお気軽に</p>
+              <p class="menu-card-name">ハッシュドビーフ</p>
+              <p class="menu-card-desc">喫茶店ならではの洋食メニュー。懐かしい味わいのハッシュドビーフは、ランチタイムにぴったりの一品です。</p>
+              <p class="menu-card-price">人気の洋食メニュー</p>
+            </div>
+          </div>
+
+          <div class="menu-card">
+            <div class="menu-card-img">
+              <!-- <img src="img/menu-hotcake.jpg" alt="ホットケーキ" style="width:100%;height:100%;object-fit:cover;"> -->
+              <span style="font-size:32px;">🥞</span>
+            </div>
+            <div class="menu-card-body">
+              <p class="menu-card-name">ホットケーキ</p>
+              <p class="menu-card-desc">純喫茶の定番スイーツ。ふっくらと焼き上げたホットケーキをコーヒーとあわせてどうぞ。</p>
+              <p class="menu-card-price">甘いひとときに</p>
+            </div>
+          </div>
+
+          <div class="menu-card">
+            <div class="menu-card-img">
+              <!-- <img src="img/menu-drycurry.jpg" alt="ドライカレー" style="width:100%;height:100%;object-fit:cover;"> -->
+              <span style="font-size:32px;">🍽️</span>
+            </div>
+            <div class="menu-card-body">
+              <p class="menu-card-name">ドライカレー</p>
+              <p class="menu-card-desc">喫茶店ならではのほっとする味わい。ランチやティータイムのひとときにどうぞ。</p>
+              <p class="menu-card-price">喫茶店の定番</p>
             </div>
           </div>
 
         </div>
       </div>
       <div class="carousel-nav">
-        <button class="carousel-btn" id="prevBtn" onclick="slideCarousel(-1)">&#8592;</button>
-        <button class="carousel-btn" id="nextBtn" onclick="slideCarousel(1)">&#8594;</button>
+        <button class="carousel-btn" onclick="slideCarousel(-1)">&#8592;</button>
+        <button class="carousel-btn" onclick="slideCarousel(1)">&#8594;</button>
       </div>
     </div>
   </section>
@@ -307,41 +329,45 @@
     <div class="section-inner">
       <p class="section-label">Access</p>
       <h2 class="section-title">アクセス</h2>
-      <p class="section-title-jp">宝塚市売布の静かな住宅街に</p>
+      <p class="section-title-jp">武庫之荘駅北口から徒歩1分</p>
       <div class="location-content">
-        <div class="location-image">
-          <!-- <img src="img/location.jpg" alt="カフェナルト外観" class="location-map"> -->
+        <div>
+          <!-- <img src="img/location.jpg" alt="グランス珈琲館 外観" style="width:100%;display:block;margin-bottom:16px;"> -->
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3275.6474433292774!2d135.35822998912374!3d34.81481070295087!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6000f417c9f40001%3A0x640cf7a4af335268!2z44Kr44OV44Kn44OK44Or44OI!5e0!3m2!1sja!2sjp!4v1781011261124!5m2!1sja!2sjp"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3278.144296038688!2d135.39115017574656!3d34.751957772901534!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6000f1c2855a65eb%3A0x943d532e00374644!2z44Kw44Op44Oz44K554-I55Cy6aSoIOatpuW6q-S5i-iNmOW6lw!5e0!3m2!1sja!2sjp!4v1781006499305!5m2!1sja!2sjp"
             width="600" height="450" style="border:0;width:100%;display:block;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
           </iframe>
         </div>
         <div class="location-info">
           <div class="detail-item">
             <strong>店名</strong>
-            <p>カフェナルト</p>
+            <p>グランス珈琲館</p>
           </div>
           <div class="detail-item">
             <strong>住所</strong>
-            <p>〒665-0852<br>兵庫県宝塚市売布２丁目８−１２</p>
+            <p>〒661-0035<br>兵庫県尼崎市武庫之荘１丁目２−７</p>
           </div>
           <div class="detail-item">
             <strong>電話</strong>
-            <p><a href="tel:0797860588" style="color:var(--accent);text-decoration:none;">0797-86-0588</a></p>
+            <p><a href="tel:0664371755" style="color:var(--accent);text-decoration:none;">06-6437-1755</a></p>
           </div>
           <div class="detail-item">
             <strong>営業時間</strong>
-            <p>月〜土　08:00〜18:00</p>
+            <p>07:20〜21:30<br><span style="font-size:11px;color:var(--text-light);">※ 月によって変更あり</span></p>
           </div>
           <div class="detail-item">
             <strong>定休日</strong>
-            <p>日曜日</p>
+            <p>不定休</p>
           </div>
           <div class="detail-item">
             <strong>最寄り駅</strong>
-            <p>阪急宝塚線 売布神社駅<br>（徒歩約3分）</p>
+            <p>阪急神戸本線<br>武庫之荘駅 北改札口より徒歩1分</p>
           </div>
-          <p class="location-note">※ 駐車場あり。住宅街の中ほどにございます。初めての方はお電話でご確認ください。</p>
+          <div class="detail-item">
+            <strong>お支払い</strong>
+            <p>現金・QRコード決済対応<br><span style="font-size:11px;color:var(--text-light);">※ カード・電子マネー不可</span></p>
+          </div>
+          <p class="location-note">※ 予約不可。2階は禁煙スペースです。お一人様でもお気軽にどうぞ。</p>
         </div>
       </div>
     </div>
@@ -349,14 +375,14 @@
 
   <!-- CONTACT SECTION -->
   <section id="contact" class="contact-section">
-    <div class="section-inner" style="max-width:600px;margin:0 auto;">
+    <div style="max-width:600px;margin:0 auto;">
       <p class="section-label">Contact</p>
       <h2 class="section-title">お問い合わせ</h2>
       <p class="section-title-jp">お気軽にご連絡ください</p>
-      <a href="tel:0797860588" class="contact-phone">0797-86-0588</a>
+      <a href="tel:0664371755" class="contact-phone">06-6437-1755</a>
       <p class="contact-hours">
-        受付時間：月〜土　08:00〜18:00<br>
-        ※ 日曜日はお休みです
+        営業時間：07:20〜21:30<br>
+        ※ 定休日は不定休です。営業時間は月によって異なる場合がございます。
       </p>
     </div>
   </section>
@@ -365,35 +391,35 @@
   <footer class="footer">
     <div class="footer-content">
       <div class="footer-section">
-        <p class="footer-logo-sub">Takarazuka, Hyogo</p>
-        <p class="footer-logo-name">Cafe Naruto</p>
-        <p style="font-size:12px;line-height:2;">売布神社のそばで、地元の方々に<br>長く愛されてきた小さな喫茶店。</p>
+        <p class="footer-logo-sub">Mukogaoka, Amagasaki</p>
+        <p class="footer-logo-name">Grans Kohi-kan</p>
+        <p style="font-size:12px;line-height:2;">武庫之荘の細道の奥に佇む、<br>昭和の面影を残す純喫茶です。</p>
       </div>
       <div class="footer-section">
         <h4>Information</h4>
         <address>
-          〒665-0852<br>
-          兵庫県宝塚市売布２丁目８−１２<br>
-          TEL: 0797-86-0588
+          〒661-0035<br>
+          兵庫県尼崎市武庫之荘１丁目２−７<br>
+          TEL: 06-6437-1755
         </address>
       </div>
       <div class="footer-section">
         <h4>Hours</h4>
         <p>
-          月・火・水・木・金・土<br>
-          08:00 〜 18:00<br>
-          <span style="color:rgba(255,255,255,0.4);">定休日：日曜日</span>
+          07:20 〜 21:30<br>
+          <span style="color:rgba(255,255,255,0.4);">定休日：不定休</span><br>
+          <span style="color:rgba(255,255,255,0.3);font-size:11px;">※ 月により変更あり</span>
         </p>
       </div>
     </div>
     <div class="footer-bottom">
-      <span>© Cafe Naruto. All rights reserved.</span>
-      <span>宝塚市売布の喫茶店</span>
+      <span>© グランス珈琲館. All rights reserved.</span>
+      <span>武庫之荘の純喫茶</span>
     </div>
   </footer>
 
   <script>
-    // ─── Slideshow (photos in img/ folder)
+    // ─── Slideshow
     const photos = document.querySelectorAll('.store-photo');
     const dotsContainer = document.getElementById('slideDots');
     let currentSlide = 0;
@@ -406,7 +432,7 @@
         dot.onclick = () => goToSlide(i);
         dotsContainer.appendChild(dot);
       });
-      setInterval(() => goToSlide((currentSlide + 1) % photos.length), 4000);
+      setInterval(() => goToSlide((currentSlide + 1) % photos.length), 4500);
     }
 
     function goToSlide(n) {
@@ -438,19 +464,12 @@
         Object.assign(menu.style, {
           display: 'flex', flexDirection: 'column', position: 'fixed',
           top: '64px', left: 0, right: 0, background: '#fff',
-          padding: '20px 32px', gap: '0', borderBottom: '1px solid #e8ddd0',
-          zIndex: '99'
+          padding: '20px 32px', gap: '0', borderBottom: '1px solid #e4dbd0'
         });
-        menu.querySelectorAll('li').forEach(li => li.style.borderBottom = '1px solid #f0ebe4');
+        menu.querySelectorAll('li').forEach(li => li.style.borderBottom = '1px solid #ede7de');
         menu.querySelectorAll('a').forEach(a => Object.assign(a.style, { display: 'block', padding: '14px 0' }));
       }
     }
-    // リンクをタップしたらメニューを閉じる
-    document.querySelector('.nav-menu').querySelectorAll('a').forEach(a => {
-      a.addEventListener('click', () => {
-        document.querySelector('.nav-menu').style.display = '';
-      });
-    });
   </script>
 </body>
 </html>
