@@ -158,6 +158,10 @@
     .detail-item:first-child { border-top: 1px solid var(--border); }
     .detail-item strong { flex: 0 0 90px; font-size: 12px; font-weight: 400; letter-spacing: 0.08em; color: var(--text-mid); padding-top: 2px; }
     .detail-item p { font-size: 13px; line-height: 1.9; color: var(--text); }
+    .detail-item-link { text-decoration: none; transition: background-color 0.2s ease; }
+    .detail-item-link:hover,
+    .detail-item-link:focus-visible { background: rgba(142, 201, 142, 0.08); }
+    .detail-item-link p { color: var(--accent); font-weight: 500; }
     .location-note { margin-top: 24px; font-size: 12px; color: var(--text-light); line-height: 1.9; }
 
     /* ─── CONTACT ─── */
@@ -262,7 +266,7 @@
         細道の奥に佇む隠れ家のような喫茶店です。<br>
         広々とした店内で、ゆったりとした時間をお過ごしください。
       </p>
-      <a href="tel:0664371755" class="cta-button">お電話でのお問い合わせ</a>
+      <a href="tel:0664371755" class="cta-button">お問い合わせ・予約はこちらから</a>
       <p class="cta-sub">06-6437-1755</p>
     </div>
   </main>
@@ -376,13 +380,13 @@
             <strong>住所</strong>
             <p>〒661-0035<br>兵庫県尼崎市武庫之荘１丁目２−７</p>
           </div>
-          <div class="detail-item">
-            <strong>電話</strong>
-            <p><a href="tel:0664371755" style="color:var(--accent);text-decoration:none;">06-6437-1755</a></p>
-          </div>
+          <a href="tel:0664371755" class="detail-item detail-item-link" aria-label="お問い合わせ・予約 06-6437-1755 に電話する">
+            <strong>お問い合わせ・予約</strong>
+            <p>☎ 06-6437-1755</p>
+          </a>
           <div class="detail-item">
             <strong>営業時間</strong>
-            <p>07:20〜21:30<br><span style="font-size:11px;color:var(--text-light);">※ 月によって変更あり</span></p>
+            <p>07:20〜19:00<br><span style="font-size:11px;color:var(--text-light);">※ 月によって変更あり</span></p>
           </div>
           <div class="detail-item">
             <strong>定休日</strong>
@@ -406,11 +410,11 @@
   <section id="contact" class="contact-section">
     <div style="max-width:600px;margin:0 auto;">
       <p class="section-label">Contact</p>
-      <h2 class="section-title">お問い合わせ</h2>
-      <p class="section-title-jp">お気軽にご連絡ください</p>
+      <h2 class="section-title">お問い合わせ・予約</h2>
+      <p class="section-title-jp">お問い合わせ・予約はこちらから</p>
       <a href="tel:0664371755" class="contact-phone">06-6437-1755</a>
       <p class="contact-hours">
-        営業時間：07:20〜21:30<br>
+        営業時間：07:20〜19:00<br>
         ※ 定休日は不定休です。営業時間は月によって異なる場合がございます。
       </p>
     </div>
@@ -435,7 +439,7 @@
       <div class="footer-section">
         <h4>Hours</h4>
         <p>
-          07:20 〜 21:30<br>
+          07:20 〜 19:00<br>
           <span style="color:rgba(255,255,255,0.4);">定休日：不定休</span><br>
           <span style="color:rgba(255,255,255,0.3);font-size:11px;">※ 月により変更あり</span>
         </p>
